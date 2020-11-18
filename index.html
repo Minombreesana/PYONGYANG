@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PYONGYANG</title>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script>
+
+    <!-- MOVIMIENTO DE LA CAMARA -->
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.0/dist/aframe-extras.min.js"></script>
+    <script src="https://unpkg.com/super-hands@2.0.2/dist/super-hands.min.js"></script>
+
+     <!-- LIBRERIAS DE COLISIONES Y FÍSICAS-->
+    <script src="https://cdn.rawgit.com/donmccurdy/aframe-physics-system/v4.0.1/dist/aframe-physics-system.min.js"></script>
+    <script src="https://unpkg.com/aframe-physics-extras@0.1.2/dist/aframe-physics-extras.min.js"></script>
+
+    
+     <!-- ANIMACIÓN AGUA-->
+     <script src="https://unpkg.com/aframe-animation-component@3.2.1/dist/aframe-animation-component.min.js"></script>
+     <script src="https://unpkg.com/aframe-extras.ocean@%5E3.5.x/dist/aframe-extras.ocean.min.js"></script>
+     <script src="https://unpkg.com/aframe-animation-component@3.2.1/dist/aframe-animation-component.min.js"></script>
+  
+</head>
+
+<body>
+    <a-scene physics="gravity:0; debug: false">
+  
+    <a-entity movement-controls kinematic-body>
+    <a-entity id="camera" camera position="0 6 0" look-controls></a-entity>
+   </a-entity>
+
+
+
+    <a-assets>
+    <img id="tapete" src="./assets/tapete.jpg">
+    <img id="pared" src="assets/pared3.jpg">
+    <img id="fondo1" src="assets/fondo1.png">
+    <img id="fondo2" src="assets/fondo2.png">
+    <img id="fondo3" src="assets/fondo3.png">
+    <img id="etiqueta" src="assets/etiqueta.jpg">
+    <img id="cielo" src="assets/cielo.jpg">
+    <img id="pisopelu" src="assets/pisopelu.jpg">
+    <img id="paredpelu" src="assets/paredpelu-01.png">
+    <img id="paredpelu2" src="assets/paredpelu2-04.png">
+    <img id="cuadropelu" src="assets/cuadorpelu-02.png">
+    <img id="kim1" src="assets/kim-01.jpg">
+    <img id="kim2" src="assets/kim-02.jpg">
+    <img id="unfinished" src="assets/unfinished.png">
+    <img id="subtitulo1" src="assets/subtitulo1-01.png">
+    <img id="80s" src="assets/80.png">
+    <img id="future" src="assets/future.png">
+    <img id="mapa" src="assets/mapa.png">
+    <img id="subtitulo2" src="assets/subtitulo 2-01.png">
+    <img id="welcome" src="assets/welcome.png">
+     <a-asset-item id="plantapelu" src="./assets/plantapelu.gltf"></a-asset-item>
+    <a-asset-item id="flores" src="./assets/flores.gltf"></a-asset-item>
+    <a-asset-item id="rosa" src="./assets/rosa.gltf"></a-asset-item>
+    <a-asset-item id="hojas" src="./assets/hojas.gltf"></a-asset-item>
+    <a-asset-item id="hojas2" src="./assets/hojas3.gltf"></a-asset-item>
+    <a-asset-item id="kim" src="./assets/kim.gltf"></a-asset-item>
+    <a-asset-item id="ventilador" src="./assets/ventilador.gltf"></a-asset-item>
+    <a-asset-item id="rosadas" src="./assets/rosadas.gltf"></a-asset-item>
+    <a-asset-item id="pescadocohete" src="./assets/pescadocohete.gltf"></a-asset-item>
+    <audio id="radio" src="assets/radio.mp3" autoplay></audio>
+    </a-assets>
+
+    
+
+    <!-- DIORAMA ATUN-->
+    <!--a-box src="#tapete" scale="35 0.1 30" rotation="0 90 0" material="repeat: 10 10" position=" -7.251 0 -21.738"></a-box-->
+    <a-box src=#pared static-body position="-2.932 4.082 -24.518" scale="30 20 0.5"  material=" repeat: 2 1"></a-box>
+    <a-box  position="-2.804 0.855 -20.836" scale="10 2 5" material="color: #687a78; opacity: 0.95; metalness: 0; roughness: 1"></a-box>
+    <a-box  position="-2.872 9.8 -20.836" scale="10 0.1 5" material="color: #CF9E87"></a-box>
+    <a-entity id="ocean" ocean="density: 12; width: 10; depth: 5; speed: 4"  position="-2.804 1.75 -20.836" material="color: #687a78; opacity: 0.95; metalness: 0; roughness: 1" rotation="-90 0 0"></a-entity>
+    <a-box static-body src="#fondo1" position="-7.832 4.819 -20.836" scale="5 10 0.1" rotation="-180 90 -180"></a-box>
+    <a-box static-body src="#fondo2" position="-2.867 4.819 -23.265" scale="10 10 0.1"></a-box>
+    <a-box static-body src="#fondo3" position="2.193 4.819 -20.836" scale="5 10 0.1" rotation="-180 90 -180"></a-box>
+    <a-entity id="atun" geometry="primitive: cylinder"
+                scale="1.437 1.437 1.437"
+                material="src:#etiqueta"
+                position="-2.815 2.2 -20.000"
+                rotation="0 300 0"
+                animation="property: position; easing: easeInOutQuad; dir: alternate; dur: 1000; to: -2.815 1.8 -20.000; loop: true"></a-entity>
+
+                <a-entity id="atun" geometry="primitive: cylinder"
+                scale="1.437 1.437 1.437"
+                material="src:#etiqueta"
+                position="-2.815 4 -20.000"
+                rotation="0 160 0"
+                animation="property: position; easing: easeInOutQuad; dir: alternate; dur: 1000; to: -2.815 3.6 -20.000; loop: true"></a-entity>
+
+                <a-entity id="atun" geometry="primitive: cylinder"
+                scale="1.437 1.437 1.437"
+                material="src:#etiqueta"
+                position="-2.815 5.9 -20.000"
+                rotation="0 60 0"
+                animation="property: position; easing: easeInOutQuad; dir: alternate; dur: 1000; to: -2.815 5.5 -20.000; loop: true"></a-entity>
+
+                <a-entity light="intensity:  0.5;  type:  point" position="-2.320 5.574 -12.183" ></a-entity>
+                <a-entity light="intensity:  0.2;  type:  point" position="-6.178 8.886 -22.346" ></a-entity>
+                <a-entity light="intensity:  0.2;  type:  point" position="-3.156 8.886 -22.346" ></a-entity>
+                <a-entity light="intensity:  0.2;  type:  point" position="0.112 8.886 -22.346" ></a-entity>
+
+                
+              
+ <!-- DIORAMA PELUQUERIA-->
+
+<a-box src="#pisopelu" scale="20 0.3 8" rotation="0 90 0" material="repeat: 10 2" position=" 49.140 0.1 5.238" shadow="receive: true"></a-box>
+<a-box src=#paredpelu static-body position="53 7.463 5.238" rotation="0 90 0" scale="20 15 0.5"  material=" repeat: 1 1" shadow="receive: true"></a-box>
+<!--<a-box src=#paredpelu2 static-body position="49.331 7.463 15.228" rotation="0 0 0" scale="8 15 0.5"  material=" repeat: 1 1" shadow="receive: true"></a-box>
+<a-box src=#paredpelu2 static-body position="49.331 7.463 -4.765" rotation="0 0 0" scale="8 15 0.5"  material=" repeat: 1 1" shadow="receive: true"></a-box>-->
+<a-box src=#cuadropelu position="52.7 8.5 5.3" rotation="0 90 0" scale="10 5.7 0.1"></a-box>
+
+<!--<a-entity static-body gltf-model="#plantapelu" 
+position="50.629 0.3 -2.172" 
+scale="0.08 0.08 0.08" 
+shadow="cast: true"></a-entity>-->
+
+<!--ESCULTURAS-->
+<a-entity static-body gltf-model="#flores" position="35.810 -0.005 -3.812" scale="5 5 5" rotation="0 0 0"></a-entity>
+<a-entity static-body gltf-model="#flores" position="35.810 -0.005 20.105" scale="5 5 5" rotation="0 0 0"></a-entity>
+
+
+<!--ROSAS-->
+<a-entity static-body gltf-model="#rosa" 
+position="52.399 12.171 1.383" scale="0.5 0.5 0.5" rotation="90 -90 0"></a-entity>
+
+<a-entity static-body gltf-model="#rosa" 
+position="52.399 13.076 -0.826" scale="0.5 0.5 0.5" rotation="90 -90 0"></a-entity>
+
+<a-entity static-body gltf-model="#rosa" 
+position="52.399 14.284 -0.223" scale="0.5 0.5 0.5" rotation="90 -90 0"></a-entity>
+
+<a-entity static-body gltf-model="#rosa" 
+position="52.399 10.921 -0.304" scale="0.5 0.5 0.5" rotation="90 -90 0"></a-entity>
+
+<a-entity static-body gltf-model="#rosa" 
+position="52.399 12.408 -3.023" scale="0.5 0.5 0.5" rotation="90 -90 0"></a-entity>
+
+<a-entity static-body gltf-model="#rosa" 
+position="52.399 8.640 0.170" scale="0.5 0.5 0.5" rotation="90 -90 0"></a-entity>
+
+<a-entity static-body gltf-model="#rosa" 
+position="52.399 9.776 -2.235" scale="0.5 0.5 0.5" rotation="90 -90 0"></a-entity>
+
+<a-entity static-body gltf-model="#rosa" 
+position="52.399 5.741 -2.235" scale="0.5 0.5 0.5" rotation="90 -90 0"></a-entity>
+
+<a-entity static-body gltf-model="#rosa" 
+position="52.399 5.108 1.842" scale="0.5 0.5 0.5" rotation="90 -90 0"></a-entity>
+
+<a-entity static-body gltf-model="#rosa" 
+position="52.399 6.732 -0.966" scale="0.5 0.5 0.5" rotation="90 -90 0"></a-entity>
+
+<a-entity static-body gltf-model="#rosa" 
+position="52.399 2.851 -0.966" scale="0.5 0.5 0.5" rotation="90 -90 0"></a-entity>
+
+<a-entity static-body gltf-model="#rosa" 
+position="52.399 2.266 3.096" scale="0.5 0.5 0.5" rotation="90 -90 0"></a-entity>
+
+<a-entity static-body gltf-model="#rosa" 
+position="52.399 3.506 4.589" scale="0.5 0.5 0.5" rotation="90 -90 0"></a-entity>
+
+<a-entity static-body gltf-model="#rosa" 
+position="52.399 5.108 7.825" scale="0.5 0.5 0.5" rotation="90 -90 0"></a-entity>
+
+<a-entity static-body gltf-model="#rosa" 
+position="52.399 1.872 6.316" scale="0.5 0.5 0.5" rotation="90 -90 0"></a-entity>
+
+<a-entity static-body gltf-model="#rosa" 
+position="52.399 3.642 9.369" scale="0.5 0.5 0.5" rotation="90 -90 0"></a-entity>
+
+<a-entity static-body gltf-model="#rosa" 
+position="52.399 5.563 10.660" scale="0.5 0.5 0.5" rotation="90 -90 0"></a-entity>
+
+<a-entity static-body gltf-model="#rosa" 
+position="52.399 1.850 11.156" scale="0.5 0.5 0.5" rotation="90 -90 0"></a-entity>
+
+<a-entity static-body gltf-model="#rosa" 
+position="52.399 4.101 12.415" scale="0.5 0.5 0.5" rotation="90 -90 0"></a-entity>
+
+<a-entity static-body gltf-model="#rosa" 
+position="52.399 6.002 13.497" scale="0.5 0.5 0.5" rotation="90 -90 0"></a-entity>
+
+<a-entity static-body gltf-model="#rosa" 
+position="52.399 8.357 11.947" scale="0.5 0.5 0.5" rotation="90 -90 0"></a-entity>
+
+<a-entity static-body gltf-model="#rosa" 
+position="52.399 12.408 13.528" scale="0.5 0.5 0.5" rotation="90 -90 0"></a-entity>
+
+<a-entity static-body gltf-model="#rosa" 
+position="52.399 9.776 13.747" scale="0.5 0.5 0.5" rotation="90 -90 0"></a-entity>
+
+<a-entity static-body gltf-model="#rosa" 
+position="52.399 10.921 10.563" scale="0.5 0.5 0.5" rotation="90 -90 0"></a-entity>
+
+<a-entity static-body gltf-model="#rosa" 
+position="52.399 13.845 11.465" scale="0.5 0.5 0.5" rotation="90 -90 0"></a-entity>
+
+<a-entity static-body gltf-model="#rosa" 
+position="52.399 13.580 4.557" scale="0.5 0.5 0.5" rotation="90 -90 0"></a-entity>
+
+<a-entity static-body gltf-model="#rosa" 
+position="52.399 11.770 5.785" scale="0.5 0.5 0.5" rotation="90 -90 0"></a-entity>
+
+<a-entity static-body gltf-model="#rosa" 
+position="52.399 13.076 8.614" scale="0.5 0.5 0.5" rotation="90 -90 0"></a-entity>
+
+<!--HOJAS-->
+
+<a-entity static-body gltf-model="#hojas2" 
+scale="2 2 2"
+position="54.895 10.620 -0.663" 
+rotation="-3 -174.58 5.775"></a-entity>
+
+<a-entity static-body gltf-model="#hojas2" 
+scale="2 2 2" position="54.895 11.255 0.021" rotation="11.264 -5.519 -175.02"></a-entity>
+
+<a-entity static-body gltf-model="#hojas2" 
+scale="2 2 2" position="54.895 11.221 -2.074" rotation="-23.279 -174.10 -2.074"></a-entity>
+
+<a-entity static-body gltf-model="#hojas2" 
+scale="2 2 2" position="54.895 11.205 -2.074" rotation="58.806 -10.504 -171.253"></a-entity>
+
+<a-entity static-body gltf-model="#hojas2" 
+scale="2 2 2" position="54.895 12.737 -1.506" rotation="58.806 -10.504 -171.253"></a-entity>
+
+<a-entity static-body gltf-model="#hojas2" 
+scale="2 2 2" position="54.895 11.699 2.003" rotation="11.264 -5.519 -175.02"></a-entity>
+
+<a-entity static-body gltf-model="#hojas2" 
+scale="2 2 2" position="54.895 9.982 -1.635" rotation="-23.279 -174.10 -2.074"></a-entity>
+
+<a-entity static-body gltf-model="#hojas2" 
+scale="2 2 2" position="54.895 7.516 -0.170" rotation="58.806 -10.504 -171.253"></a-entity>
+
+<a-entity static-body gltf-model="#hojas2" 
+scale="2 2 2" position="54.895 12.571 -3.533" rotation="58.806 -10.504 -171.253"></a-entity>
+
+<a-entity static-body gltf-model="#hojas2" 
+scale="2 2 2" position="54.895 13.650 -1.506" rotation="58.806 -10.504 -171.253"></a-entity>
+
+<a-entity static-body gltf-model="#hojas2" 
+scale="2 2 2" position="54.895 6.676 -1.416" rotation="11.264 -5.519 -175.02"></a-entity>
+
+<a-entity static-body gltf-model="#hojas2" 
+scale="2 2 2" position="54.895 5.295 -2.074" rotation="58.806 -10.504 -171.253"></a-entity>
+
+<a-entity static-body gltf-model="#hojas2" 
+scale="2 2 2" position="54.895 4.025 -0.366" rotation="58.806 -10.504 -171.253"></a-entity>
+
+<a-entity static-body gltf-model="#hojas2" 
+scale="2 2 2" position="54.895 8.638 -3.655" rotation="-61.708 -168.50 7.611"></a-entity>
+
+<a-entity static-body gltf-model="#hojas2" 
+scale="2 2 2" position="54.895 9.855 -2.586" rotation="-23.279 -174.10 -2.074"></a-entity>
+
+<a-entity static-body gltf-model="#hojas2" 
+scale="2 2 2" position="54.895 6.525 -1.635" rotation="-23.279 -174.10 -2.074"></a-entity>
+
+<a-entity static-body gltf-model="#hojas2" 
+scale="2 2 2" position="54.895 5.295 0.430" rotation="58.806 -10.504 -171.253"></a-entity>
+
+<a-entity static-body gltf-model="#hojas2" 
+scale="2 2 2" position="54.895 3.249 3.672" rotation="52.764 -171.02 24.928"></a-entity>
+
+<a-entity static-body gltf-model="#hojas2" 
+scale="2 2 2" position="54.895 3.583 -2.278" rotation="58.806 -10.504 -171.253"></a-entity>
+
+<a-entity static-body gltf-model="#hojas2" 
+scale="2 2 2" position="54.895 4.861 3.138" rotation="58.806 -10.504 -171.253"></a-entity>
+
+<a-entity static-body gltf-model="#hojas2" 
+scale="2 2 2" position="54.895 4.467 2.147" rotation="58.806 -10.504 -171.253"></a-entity>
+
+<a-entity static-body gltf-model="#hojas2" 
+scale="2 2 2" position="54.895 3.767 -1.635" rotation="-23.279 -174.10 -2.074"></a-entity>
+
+<a-entity static-body gltf-model="#hojas2" 
+scale="2 2 2" position="54.895 2.894 0.430" rotation="58.806 -10.504 -171.253"></a-entity>
+
+<a-entity static-body gltf-model="#hojas2" 
+scale="2 2 2" position="54.895 3.649 -3.537" rotation="58.806 -10.504 -171.253"></a-entity>
+
+<a-entity static-body gltf-model="#hojas2" 
+scale="2 2 2" position="54.895 3.577 1.390" rotation="58.806 -10.504 -171.253"></a-entity>
+
+<a-entity static-body gltf-model="#hojas2" 
+scale="2 2 2" position="54.895 1.884 -0.366" rotation="58.806 -10.504 -171.253"></a-entity>
+
+<a-entity static-body gltf-model="#hojas2" 
+scale="2 2 2" position="54.895 2.514 -2.518" rotation="-61.708 -168.50 7.611"></a-entity>
+
+<a-entity static-body gltf-model="#hojas2" 
+scale="2 2 2" position="54.895 4.610 5.216" rotation="-23.279 -174.10 -2.074"></a-entity>
+
+<a-entity static-body gltf-model="#hojas2" 
+scale="2 2 2" position="54.895 4.481 7.011" rotation="58.806 -10.504 -171.253"></a-entity>
+
+<a-entity static-body gltf-model="#hojas2" 
+scale="2 2 2" position="54.895 2.984 2.637" rotation="58.806 -10.504 -171.253"></a-entity>
+
+<a-entity static-body gltf-model="#hojas2" 
+scale="2 2 2" position="54.895 3.123 7.363" rotation="58.806 -10.504 -171.253"></a-entity>
+
+<a-entity static-body gltf-model="#hojas2" 
+scale="2 2 2" position="54.895 2.858 7.603" rotation="-61.708 -168.50 7.611"></a-entity>
+
+<a-entity static-body gltf-model="#hojas2" 
+scale="2 2 2" position="54.895 3.546 5.859" rotation="-23.279 -174.10 -2.074"></a-entity>
+
+<a-entity static-body gltf-model="#hojas2" 
+scale="2 2 2" position="54.895 2.593 9.436" rotation="-62.675 -168.12 -10.313"></a-entity>
+
+<a-entity static-body gltf-model="#hojas2" 
+scale="2 2 2" position="54.895 1.738 3.485" rotation="58.806 -10.504 -171.253"></a-entity>
+
+<a-entity static-body gltf-model="#hojas2" 
+scale="2 2 2" position="54.895 13.650 13.761" rotation="58.806 -10.504 -171.253"></a-entity>
+
+<a-entity static-body gltf-model="#hojas2" 
+scale="2 2 2" position="54.895 13.447 11.245" rotation="58.806 -10.504 -171.253"></a-entity>
+
+<a-entity static-body gltf-model="#hojas2" 
+scale="2 2 2" position="54.895 11.699 14.664" rotation="11.264 -5.519 -175.02"></a-entity>
+
+<a-entity static-body gltf-model="#hojas2" 
+scale="2 2 2" position="54.895 11.693 11.303" rotation="58.806 -10.504 -171.253"></a-entity>
+
+<a-entity static-body gltf-model="#hojas2" 
+scale="2 2 2" position="54.895 11.683 12.743" rotation="-23.279 -174.10 -2.074"></a-entity>
+
+<a-entity static-body gltf-model="#hojas2" 
+scale="2 2 2" position="54.895 11.205 9.863" rotation="58.806 -10.504 -171.253"></a-entity>
+
+<a-entity static-body gltf-model="#hojas2" 
+scale="2 2 2" position="54.895 10.620 10.781" rotation="54.895 10.620 10.781"></a-entity>
+
+<a-entity static-body gltf-model="#hojas2" 
+scale="2 2 2" position="54.895 12.288 12.805" rotation="11.264 -5.519 -175.02"></a-entity>
+
+<a-entity static-body gltf-model="#hojas2" 
+scale="2 2 2" position="54.895 10.620 10.623" rotation="-3 -174.58 5.775"></a-entity>
+
+<a-entity static-body gltf-model="#hojas2" 
+scale="2 2 2" position="54.895 9.982 12.928" rotation="-23.279 -174.10 -2.074"></a-entity>
+
+<a-entity static-body gltf-model="#hojas2" 
+scale="2 2 2" position="54.895 8.940 10.416" rotation="-61.708 -168.50 7.611"></a-entity>
+
+<a-entity static-body gltf-model="#hojas2" 
+scale="2 2 2" position="54.895 8.752 14.977" rotation="-62.675 -168.12 -10.313"></a-entity>
+
+<a-entity static-body gltf-model="#hojas2" 
+scale="2 2 2" position="54.895 7.274 12.836" rotation="58.806 -10.504 -171.253"></a-entity>
+
+<a-entity static-body gltf-model="#hojas2" 
+scale="2 2 2" position="54.895 6.426 11.301" rotation="58.806 -10.504 -171.253"></a-entity>
+
+<a-entity static-body gltf-model="#hojas2" 
+scale="2 2 2" position="54.895 5.067 10.319" rotation="58.806 -10.504 -171.253"></a-entity>
+
+<a-entity static-body gltf-model="#hojas2" 
+scale="2 2 2" position="54.895 4.088 12.062" rotation="58.806 -10.504 -171.253"></a-entity>
+
+<a-entity static-body gltf-model="#hojas2" 
+scale="2 2 2" position="54.895 4.583 13.609" rotation="58.806 -10.504 -171.253"></a-entity>
+
+<a-entity static-body gltf-model="#hojas2" 
+scale="2 2 2" position="54.895 5.565 8.319" rotation="-23.279 -174.10 -2.074"></a-entity>
+
+<a-entity static-body gltf-model="#hojas2" 
+scale="2 2 2" position="54.895 3.381 9.736" rotation="58.806 -10.504 -171.253"></a-entity>
+
+<a-entity static-body gltf-model="#hojas2" 
+scale="2 2 2" position="54.895 2.844 11.468" rotation="58.806 -10.504 -171.253"></a-entity>
+
+<a-entity static-body gltf-model="#hojas2" 
+scale="2 2 2" position="54.895 2.175 13.006" rotation="58.806 -10.504 -171.253"></a-entity>
+
+<a-entity static-body gltf-model="#hojas2" 
+scale="2 2 2" position="54.895 3.847 13.581" rotation="-23.279 -174.10 -2.074"></a-entity>
+
+<a-entity static-body gltf-model="#hojas2" 
+scale="2 2 2" position="54.895 2.297 6.174" rotation="-62.675 -168.12 -10.313"></a-entity>
+
+<a-entity static-body gltf-model="#hojas2" 
+scale="2 2 2" position="54.895 7.116 12.282" rotation="-23.279 -174.10 -2.074"></a-entity>
+
+<a-entity static-body gltf-model="#hojas2" 
+scale="2 2 2" position="54.895 13.650 2.083" rotation="58.806 -10.504 -171.253"></a-entity>
+
+<a-entity static-body gltf-model="#hojas2" 
+scale="2 2 2" position="54.895 12.039 3.678" rotation="58.806 -10.504 -171.253"></a-entity>
+
+<a-entity static-body gltf-model="#hojas2" 
+scale="2 2 2" position="54.895 11.406 5.464" rotation="11.264 -5.519 -175.02"></a-entity>
+
+<a-entity static-body gltf-model="#hojas2" 
+scale="2 2 2" position="54.895 14.420 4.307" rotation="-23.279 -174.10 -2.074"></a-entity>
+
+<a-entity static-body gltf-model="#hojas2" 
+scale="2 2 2" position="54.895 12.203 6.816" rotation="-3 -174.58 5.775"></a-entity>
+
+<a-entity static-body gltf-model="#hojas2" 
+scale="2 2 2" position="54.895 13.526 6.101" rotation="-3 -174.58 5.775"></a-entity>
+
+<a-entity static-body gltf-model="#hojas2" 
+scale="2 2 2" position="54.895 13.355 7.243" rotation="67.342 -14.189 167.132"></a-entity>
+
+<a-entity static-body gltf-model="#hojas2" 
+scale="2 2 2" position="54.895 13.842 9.049" rotation="-23.279 -174.10 -2.074"></a-entity>
+
+<a-entity static-body gltf-model="#hojas2" 
+scale="2 2 2" position="54.895 1.324 12.568" rotation="58.806 -10.504 -171.253"></a-entity>
+
+<!--subtitulo peluqueria-->
+
+<a-image src="#subtitulo1" position="45.603 1.625 5.696" scale="16.654 4.163 4.163" rotation="180 90 180"></a-image>
+
+<!--KIMS-->
+
+<a-entity static-body gltf-model="#kim" 
+position="-27.064 5.236 12.376" scale="0.5 0.5 0.5" rotation="0 101.833 0"></a-entity>
+
+<a-entity static-body gltf-model="#kim" 
+position="-27.064 5.236 16.428" scale="0.5 0.5 0.5" rotation="0 101.833 0"></a-entity>
+
+
+<a-box src="#kim1" position="-27.334 11.572 12.330" rotation="0 90 0" scale="1.934 2.3 1.934"
+animation="property:rotation; from:0 0 0; to:0 360 0; dur:30000; loop:true"></a-box>
+<a-box src="#kim2" position="-27.334 11.572 16.301" rotation="0 90 0" scale="1.934 2.3 1.934"
+animation="property:rotation; from:0 0 0; to:0 360 0; dur:30000; loop:true"></a-box>
+
+<a-entity gltf-model="#rosadas" position="-26.896 -0.1 18.945" scale="0.5 0.5 0.5"></a-entity>
+<a-entity gltf-model="#rosadas" position="-26.896 -0.1 16.962" scale="0.5 0.5 0.5"></a-entity>
+<a-entity gltf-model="#rosadas" position="-26.896 -0.1 14.971" scale="0.5 0.5 0.5"></a-entity>
+<a-entity gltf-model="#rosadas" position="-26.896 -0.1 12.977" scale="0.5 0.5 0.5"></a-entity>
+<a-entity gltf-model="#rosadas" position="-26.896 -0.1 11.025" scale="0.5 0.5 0.5"></a-entity>
+<a-entity gltf-model="#rosadas" position="-26.896 -0.1 9.065" scale="0.5 0.5 0.5"></a-entity>
+
+<a-image src="#subtitulo2" position="-25.772 3.832 14.209" scale="3.735 2.414 2.414" rotation="0 90 0" ></a-image>
+
+
+
+<!--OTROS-->
+
+<a-image src="#unfinished" position="21.759 13.740 -15.427" scale="14.631 2.438 2.438" rotation="0 -33.263 0"></a-image>
+<a-image src="#80s" position="-33.939 12.790 -12.314" scale="14.631 2.438 2.438" rotation="0 49.240 0"></a-image>
+<a-image src="#welcome" position="0.728 6.757 64.702" scale="6.666 2.438 2.438" rotation="0 180 0"></a-image>
+<a-image src="#future" position="-39.932 14.513 49.047" scale="14.631 2.438 2.438" rotation="-6.162 120.003 -0.282"></a-image>
+<a-entity gltf-model="#pescadocohete" position="12.296 9.082 73.977" rotation="0 90 0" scale="3.313 3.313 3.313"
+animation="property:position; to:12.296 9.082 65.818; dur:2000; loop:true; dir: alternate"></a-entity>
+<a-image src="#mapa" position="8.264 13.276 71.108" scale="-17.474 26.169 -57.426"></a-image>
+<a-image src="#kim2" position="1 146.784 2.812" rotation="90 0 0" scale="30.490 39.481 30.490" material="opacity:0.5"></a-image>
+<a-image src="#kim1" position="0.5 146.784 2.812" rotation="90 0 0" scale="30.490 39.481 30.490" material="opacity:0.5"></a-image>
+<a-sound src="#radio" position="8.264 13.276 71.108"></a-sound>
+
+<!--CUBOS-->
+<a-box position="-26.830 9.210 14.241" scale="5.091 17.715 14.598" material="color: #E5CCE4; opacity: 0.3; metalness: 0; roughness: 1"></a-box>></a-box>
+<a-box position="-3.100 13.838 19.889" scale="5 5 5" material="color: #E5CCE4; opacity: 0.8; metalness: 0; roughness: 1"
+animation="property:rotation; from:0 0 0; to:0 360 0; dur:50000; loop:true"></a-box>></a-box>
+<a-box position="31.742 10.049 51.604" scale="10 10 10" material="color: #E5CCE4; opacity: 0.5; metalness: 0; roughness: 1"></a-box>></a-box>
+<a-box position="17.940 26.324 38.178" scale="8 8 8" material="color: #E5CCE4; opacity: 0.5; metalness: 0; roughness: 1"
+animation="property:rotation; from:0 0 0; to:0 360 0; dur:100000; loop:true"></a-box>></a-box>
+<a-box position="-75.086 16.140 56.884" scale="12 12 12" material="color: #E5CCE4; opacity: 0.5; metalness: 0; roughness: 1"
+animation="property:rotation; from:0 0 0; to:0 360 0; dur:50000; loop:true"></a-box>></a-box>
+<a-box position="36.846 9.607 -22.214" scale="10 10 10" material="color: #E5CCE4; opacity: 0.5; metalness: 0; roughness: 1"></a-box>></a-box>
+<a-box position="51.040 29.337 -62.276" scale="10 10 10" material="color: #E5CCE4; opacity: 0.8; metalness: 0; roughness: 1"
+animation="property:rotation; from:0 0 0; to:0 360 0; dur:30000; loop:true"></a-box>></a-box>
+<a-box position="-70.736 32.460 -60.395" scale="8 8 8" material="color: #E5CCE4; opacity: 0.5; metalness: 0; roughness: 1"
+animation="property:rotation; from:0 0 0; to:0 360 0; dur:50000; loop:true"></a-box>></a-box>
+<a-box position="-22.194 24.892 -37.677" scale="10 10 10" material="color: #E5CCE4; opacity: 0.5; metalness: 0; roughness: 1"
+animation="property:rotation; from:0 0 0; to:0 360 0; dur:50000; loop:true"></a-box>></a-box>
+<a-box position="-55.221 7 -1.347" scale="8 8 8" rotation="0 45 0" material="color: #E5CCE4; opacity: 0.5; metalness: 0; roughness: 1"></a-box>></a-box>
+
+<!--ENVIRONMENT-->
+<a-entity environment="preset:contact;
+ground:hills;
+groundColor:#C8B8C9;
+groundColor2:#9C9DA0;
+grid: none;
+lighting:none;
+fog:0.1;
+dressing:apparatus;
+dressingAmount:5;
+dressingColor:#A88396"></a-entity> 
+<a-entity light="intensity:  0.150;  type: ambient" position="1 43.821 1" ></a-entity> 
+
+
+
+
+
+
+</a-scene>
+</body>
+</html>
