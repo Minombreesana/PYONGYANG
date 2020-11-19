@@ -33,7 +33,6 @@
 
 
     <a-assets>
-    <img id="tapete" src="./assets/tapete.jpg">
     <img id="pared" src="assets/pared3.jpg">
     <img id="fondo1" src="assets/fondo1.png">
     <img id="fondo2" src="assets/fondo2.png">
@@ -42,7 +41,6 @@
     <img id="cielo" src="assets/cielo.jpg">
     <img id="pisopelu" src="assets/pisopelu.jpg">
     <img id="paredpelu" src="assets/paredpelu-01.png">
-    <img id="paredpelu2" src="assets/paredpelu2-04.png">
     <img id="cuadropelu" src="assets/cuadorpelu-02.png">
     <img id="kim1" src="assets/kim-01.jpg">
     <img id="kim2" src="assets/kim-02.jpg">
@@ -50,25 +48,38 @@
     <img id="subtitulo1" src="assets/subtitulo1-01.png">
     <img id="80s" src="assets/80.png">
     <img id="future" src="assets/future.png">
-    <img id="mapa" src="assets/mapa.png">
     <img id="subtitulo2" src="assets/subtitulo 2-01.png">
     <img id="welcome" src="assets/welcome.png">
+    <img id="medallas1" src="assets/medallas1.png">
+    <img id="medallas2" src="assets/medallas2.png">
+    <img id="cajadulces1" src="assets/cajadulces1.jpg">
+    <img id="pareddulces" src="assets/pared1.jpg">
+    <img id="cajadulces2.1" src="assets/cajadulces2.1.jpg">
+    <img id="wel1" src="assets/wel1.jpg">
+    <img id="wel2" src="assets/wel2.jpg">
+    <img id="wel3" src="assets/wel3.jpg">
+    <img id="wel4" src="assets/wel4.jpg">
+    <img id="wel5" src="assets/wel5.jpg">
+    <img id="wel6" src="assets/wel6.jpg">
+    <img id="postal1" src="assets/postal1.jpg">
+    <img id="postal2" src="assets/postal2.jpg">
+    <img id="estampitas" src="assets/estampitas.jpg">
+    <img id="cigarrillos" src="assets/cigarrillos.jpg">
+    <img id="pulgasari" src="assets/pulgasari.png">
+    <img id="hotelito" src="assets/hotel.png">
      <a-asset-item id="plantapelu" src="./assets/plantapelu.gltf"></a-asset-item>
     <a-asset-item id="flores" src="./assets/flores.gltf"></a-asset-item>
     <a-asset-item id="rosa" src="./assets/rosa.gltf"></a-asset-item>
-    <a-asset-item id="hojas" src="./assets/hojas.gltf"></a-asset-item>
     <a-asset-item id="hojas2" src="./assets/hojas3.gltf"></a-asset-item>
     <a-asset-item id="kim" src="./assets/kim.gltf"></a-asset-item>
-    <a-asset-item id="ventilador" src="./assets/ventilador.gltf"></a-asset-item>
     <a-asset-item id="rosadas" src="./assets/rosadas.gltf"></a-asset-item>
-    <a-asset-item id="pescadocohete" src="./assets/pescadocohete.gltf"></a-asset-item>
     <audio id="radio" src="assets/radio.mp3" autoplay></audio>
     </a-assets>
 
     
 
     <!-- DIORAMA ATUN-->
-    <!--a-box src="#tapete" scale="35 0.1 30" rotation="0 90 0" material="repeat: 10 10" position=" -7.251 0 -21.738"></a-box-->
+    
     <a-box src=#pared static-body position="-2.932 4.082 -24.518" scale="30 20 0.5"  material=" repeat: 2 1"></a-box>
     <a-box  position="-2.804 0.855 -20.836" scale="10 2 5" material="color: #687a78; opacity: 0.95; metalness: 0; roughness: 1"></a-box>
     <a-box  position="-2.872 9.8 -20.836" scale="10 0.1 5" material="color: #CF9E87"></a-box>
@@ -108,14 +119,8 @@
 
 <a-box src="#pisopelu" scale="20 0.3 8" rotation="0 90 0" material="repeat: 10 2" position=" 49.140 0.1 5.238" shadow="receive: true"></a-box>
 <a-box src=#paredpelu static-body position="53 7.463 5.238" rotation="0 90 0" scale="20 15 0.5"  material=" repeat: 1 1" shadow="receive: true"></a-box>
-<!--<a-box src=#paredpelu2 static-body position="49.331 7.463 15.228" rotation="0 0 0" scale="8 15 0.5"  material=" repeat: 1 1" shadow="receive: true"></a-box>
-<a-box src=#paredpelu2 static-body position="49.331 7.463 -4.765" rotation="0 0 0" scale="8 15 0.5"  material=" repeat: 1 1" shadow="receive: true"></a-box>-->
 <a-box src=#cuadropelu position="52.7 8.5 5.3" rotation="0 90 0" scale="10 5.7 0.1"></a-box>
 
-<!--<a-entity static-body gltf-model="#plantapelu" 
-position="50.629 0.3 -2.172" 
-scale="0.08 0.08 0.08" 
-shadow="cast: true"></a-entity>-->
 
 <!--ESCULTURAS-->
 <a-entity static-body gltf-model="#flores" position="35.810 -0.005 -3.812" scale="5 5 5" rotation="0 0 0"></a-entity>
@@ -423,7 +428,6 @@ scale="2 2 2" position="54.895 1.324 12.568" rotation="58.806 -10.504 -171.253">
 
 <a-entity static-body gltf-model="#kim" 
 position="-27.064 5.236 12.376" scale="0.5 0.5 0.5" rotation="0 101.833 0"></a-entity>
-
 <a-entity static-body gltf-model="#kim" 
 position="-27.064 5.236 16.428" scale="0.5 0.5 0.5" rotation="0 101.833 0"></a-entity>
 
@@ -442,38 +446,73 @@ animation="property:rotation; from:0 0 0; to:0 360 0; dur:30000; loop:true"></a-
 
 <a-image src="#subtitulo2" position="-25.772 3.832 14.209" scale="3.735 2.414 2.414" rotation="0 90 0" ></a-image>
 
+<!--MEDALLAS-->
 
+<a-image src="#medallas1" position=" 11.204 6 49.338" scale="1.7 2.041 1.7"></a-image>
+<a-image src="#medallas2" position="9.528 6 49.338" scale="1.7 2.041 1.7"></a-image>
+<a-box position="10.407 6 49.230" scale="5.077 3 3" material="color: #E5CCE4; opacity: 0.1; metalness: 0; roughness: 1"></a-box>></a-box>
+
+<!--DULCES-->
+
+<a-box src="#pareddulces" position="64.213 7.733 57.884" scale="13 15 0.5" Rotation="0 0 0" material=" repeat: 1 1" ></a-box>
+<a-box src="#cajadulces1" position="63.973 7.934 55.517" scale="6.696 5.745 1.217" rotation="0 0 0"></a-box>
+<a-box src="#cajadulces2.1" position=" 72.590 7.395 48.604" scale="10 15 2" rotation="0 90 0"></a-box>
+
+<!--WELCOME-->
+
+<a-entity id="ocean" ocean="density: 20; width: 100;  depth: 100; speed: 4"  position="6.504 0.170 20.426" 
+material="color: #C8B8C9; opacity: 1; metalness: 0; roughness: 1" rotation="-90 0 0"></a-entity>
+
+<a-box src="#wel1" position="28 12.815 62.474" scale="6.385 3.505 0.4"></a-box>
+
+<a-box src="#wel2" position="21 12.815 62.474" scale="6.385 3.505 0.4" ></a-box>
+
+<a-box src="#wel3" position="14 12.815 62.474" scale="6.385 3.505 0.4"></a-box>
+
+<a-box src="#wel4" position="7 12.815 62.474" scale="6.385 3.505 0.4"></a-box>
+
+<a-box src="#wel5" position="0 12.815 62.474" scale="6.385 3.505 0.4"></a-box>
+
+<a-box src="#wel6" position="-7 12.815 62.474" scale="6.385 3.505 0.4"></a-box>
 
 <!--OTROS-->
 
+<a-image src="#postal1" position="-39.886 12.715 48.636" rotation="0 130 0" scale="15.095 12.871 15.095"></a-image>
 <a-image src="#unfinished" position="21.759 13.740 -15.427" scale="14.631 2.438 2.438" rotation="0 -33.263 0"></a-image>
-<a-image src="#80s" position="-33.939 12.790 -12.314" scale="14.631 2.438 2.438" rotation="0 49.240 0"></a-image>
-<a-image src="#welcome" position="0.728 6.757 64.702" scale="6.666 2.438 2.438" rotation="0 180 0"></a-image>
-<a-image src="#future" position="-39.932 14.513 49.047" scale="14.631 2.438 2.438" rotation="-6.162 120.003 -0.282"></a-image>
-<a-entity gltf-model="#pescadocohete" position="12.296 9.082 73.977" rotation="0 90 0" scale="3.313 3.313 3.313"
-animation="property:position; to:12.296 9.082 65.818; dur:2000; loop:true; dir: alternate"></a-entity>
-<a-image src="#mapa" position="8.264 13.276 71.108" scale="-17.474 26.169 -57.426"></a-image>
+<a-image src="#80s" position="-40.898 12 46.928" scale="9.338 1.556 1.556" rotation="0 130 0"></a-image>
+<a-image src="#welcome" position="10.508 8.498 64.702" scale="6.666 2.438 2.438" rotation="0 180 0"></a-image>
+<a-image src="#future" position="-40.898 14.601 46.928" scale="9.338 1.556 1.556" rotation="0 130 0"></a-image>
+<a-box src="#estampitas" position="6.664 2.868 20.299" scale="6.1 6.1 6.1" rotation="0 32 0"
+animation="property: position; easing: easeInOutQuad; 
+dir: alternate; dur: 700; to: 6.664 3 20.299; loop: true"></a-box>
+<a-box src="#cigarrillos" position="-41.422 7.483 -13.108" scale="10 15 2.5" rotation="0 90 0"></a-box>
+<a-image src="#pulgasari" position="-158.58 56.498 22.312" rotation="180 90 180" scale="157.30 139.74 139.74" material="opacity:0.5"></a-image>
+<a-image src="#hotelito" scale="333.84 210.29 17.682" position="135.66 100.46 -25.113" rotation="0 90 0" material="opacity:0.2"></a-image>
+
+<!--SONIDO-->
+<a-sound src="#radio"></a-sound>
+
+<!--KIM CIELO-->
 <a-image src="#kim2" position="1 146.784 2.812" rotation="90 0 0" scale="30.490 39.481 30.490" material="opacity:0.5"></a-image>
 <a-image src="#kim1" position="0.5 146.784 2.812" rotation="90 0 0" scale="30.490 39.481 30.490" material="opacity:0.5"></a-image>
-<a-sound src="#radio" position="8.264 13.276 71.108"></a-sound>
 
 <!--CUBOS-->
-<a-box position="-26.830 9.210 14.241" scale="5.091 17.715 14.598" material="color: #E5CCE4; opacity: 0.3; metalness: 0; roughness: 1"></a-box>></a-box>
-<a-box position="-3.100 13.838 19.889" scale="5 5 5" material="color: #E5CCE4; opacity: 0.8; metalness: 0; roughness: 1"
-animation="property:rotation; from:0 0 0; to:0 360 0; dur:50000; loop:true"></a-box>></a-box>
-<a-box position="31.742 10.049 51.604" scale="10 10 10" material="color: #E5CCE4; opacity: 0.5; metalness: 0; roughness: 1"></a-box>></a-box>
+<a-box position="-26.830 9.210 14.241" scale="5.091 17.715 14.598" material="color: #E5CCE4; opacity: 0.3; metalness: 0; roughness: 1"></a-box>
+<!--a-box position="-3.100 13.838 19.889" scale="5 5 5" material="color: #E5CCE4; opacity: 0.8; metalness: 0; roughness: 1"
+animation="property:rotation; from:0 0 0; to:0 360 0; dur:50000; loop:true"></a-box-->
+<!--a-box position="31.742 10.049 51.604" scale="10 10 10" material="color: #E5CCE4; opacity: 0.5; metalness: 0; roughness: 1"></a-box-->
 <a-box position="17.940 26.324 38.178" scale="8 8 8" material="color: #E5CCE4; opacity: 0.5; metalness: 0; roughness: 1"
-animation="property:rotation; from:0 0 0; to:0 360 0; dur:100000; loop:true"></a-box>></a-box>
+animation="property:rotation; from:0 0 0; to:0 360 0; dur:100000; loop:true"></a-box>
 <a-box position="-75.086 16.140 56.884" scale="12 12 12" material="color: #E5CCE4; opacity: 0.5; metalness: 0; roughness: 1"
-animation="property:rotation; from:0 0 0; to:0 360 0; dur:50000; loop:true"></a-box>></a-box>
-<a-box position="36.846 9.607 -22.214" scale="10 10 10" material="color: #E5CCE4; opacity: 0.5; metalness: 0; roughness: 1"></a-box>></a-box>
+animation="property:rotation; from:0 0 0; to:0 360 0; dur:50000; loop:true"></a-box>>
+<!--a-box position="36.846 9.607 -22.214" scale="10 10 10" material="color: #E5CCE4; opacity: 0.5; metalness: 0; roughness: 1"></a-box-->
 <a-box position="51.040 29.337 -62.276" scale="10 10 10" material="color: #E5CCE4; opacity: 0.8; metalness: 0; roughness: 1"
-animation="property:rotation; from:0 0 0; to:0 360 0; dur:30000; loop:true"></a-box>></a-box>
+animation="property:rotation; from:0 0 0; to:0 360 0; dur:30000; loop:true"></a-box>>
 <a-box position="-70.736 32.460 -60.395" scale="8 8 8" material="color: #E5CCE4; opacity: 0.5; metalness: 0; roughness: 1"
-animation="property:rotation; from:0 0 0; to:0 360 0; dur:50000; loop:true"></a-box>></a-box>
-<a-box position="-22.194 24.892 -37.677" scale="10 10 10" material="color: #E5CCE4; opacity: 0.5; metalness: 0; roughness: 1"
-animation="property:rotation; from:0 0 0; to:0 360 0; dur:50000; loop:true"></a-box>></a-box>
-<a-box position="-55.221 7 -1.347" scale="8 8 8" rotation="0 45 0" material="color: #E5CCE4; opacity: 0.5; metalness: 0; roughness: 1"></a-box>></a-box>
+animation="property:rotation; from:0 0 0; to:0 360 0; dur:50000; loop:true"></a-box>>
+<!--a-box position="-22.194 24.892 -37.677" scale="10 10 10" material="color: #E5CCE4; opacity: 0.5; metalness: 0; roughness: 1"
+animation="property:rotation; from:0 0 0; to:0 360 0; dur:50000; loop:true"></a-box-->
+<a-box position="-55.221 7 -1.347" scale="8 8 8" rotation="0 45 0" material="color: #E5CCE4; opacity: 0.5; metalness: 0; roughness: 1"></a-box>>
 
 <!--ENVIRONMENT-->
 <a-entity environment="preset:contact;
